@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about">
+    <h2>Про себе</h2>
+    <p>Я – веб-розробник з досвідом роботи у створенні сучасних веб-додатків.</p>
+    <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Фото профілю" width="150">
+</section>
+
+<section id="education">
+    <h2>Освіта</h2>
+    <p>Національний університет, спеціальність: Інформаційні технології (2015-2019).</p>
+</section>
+
+<section id="skills">
+    <h2>Навички</h2>
+    <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python (Flask, Django)</li>
+        <li>SQL, Git</li>
+    </ul>
+</section>
+
+<section id="experience">
+    <h2>Досвід роботи</h2>
+    <ul>
+        <li>Веб-розробник у компанії XYZ (2019-2022)</li>
+        <li>Фріланс-проекти: створення лендингів та інтернет-магазинів</li>
+    </ul>
+</section>
+{% endblock %}
+
