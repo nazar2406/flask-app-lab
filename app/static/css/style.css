@@ -1,0 +1,43 @@
+nav {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+h2 {
+    margin-left: 220px;
+    font-size: 2em;
+    color: #343a40;
+}
+
+p {
+    margin-left: 220px;
+    font-size: 1.2em;
+    color: #6c757d;
+}
+.contend {
+    padding-left: 100px;
+}
