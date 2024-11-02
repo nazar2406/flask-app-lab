@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Greeting Page {% endblock %}
+{% block content %}
+<!-- Vertical navigation -->
+<nav>
+    <ul>
+        <li>
+            <a href="{{ url_for('users.greetings_user', name='John', age=45) }}">Greet John</a>
+        </li>
+        <li>
+            <a href="{{ url_for('users.admin') }}">Admin</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Main content -->
+    <div class="contend">
+        <h2>Hello, {{ name }}!</h2>
+        {% if age %}
+        <p>You are {{ age }} years old.</p>
+        {% else %}
+        <p>Age is unknown.</p>
+        {% endif %}
+    </div>
+{% endblock %}

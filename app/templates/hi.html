@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <h1>Hello <b>{{ name | title }}</b></h1>
+    {% if age %}
+        <h1>Age <b>{{ age }}</b></h1>
+    {% else %}
+        <h1>Age <b>--</b></h1>
+    {% endif %}
+</body>
+</html>
