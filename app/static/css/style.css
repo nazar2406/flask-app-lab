@@ -1,43 +1,140 @@
-nav {
-    width: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f8f9fa;
-    padding: 20px;
-    height: 100%;
-}
-
-nav ul {
-    list-style-type: none;
+/* Основні стилі */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    margin-bottom: 10px;
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-nav ul li a {
+/* Темна тема */
+body.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode .container {
+    background-color: #444;
+    color: #ddd;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode table th, 
+body.dark-mode table td {
+    color: #ddd;
+}
+
+/* Навігація */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #fff;
     text-decoration: none;
-    color: #007bff;
+    padding: 10px;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #0056b3;
+nav a:hover {
+    background-color: #555;
 }
 
-h2 {
-    margin-left: 220px;
-    font-size: 2em;
-    color: #343a40;
+/* Кнопки */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
 }
 
-p {
-    margin-left: 220px;
-    font-size: 1.2em;
-    color: #6c757d;
+button:hover {
+    background-color: #555;
 }
-.contend {
-    padding-left: 100px;
+
+/* Таблиця */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+td {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table td:hover {
+    overflow: visible;
+    white-space: normal;
+    word-break: break-all;
+}
+
+/* Flash повідомлення */
+.flash-messages {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-messages .danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.flash-messages .info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Темні стилі для flash повідомлень */
+body.dark-mode .flash-messages .success {
+    background-color: #1a3d2f;
+    color: #d4edda;
+}
+
+body.dark-mode .flash-messages .danger {
+    background-color: #3d1a1a;
+    color: #f8d7da;
+}
+
+body.dark-mode .flash-messages .info {
+    background-color: #1a2e3d;
+    color: #d1ecf1;
 }
