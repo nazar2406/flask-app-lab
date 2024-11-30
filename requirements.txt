@@ -11,3 +11,6 @@ packaging==24.1
 python-dotenv==1.0.1
 Werkzeug==3.0.4
 WTForms==3.2.1
+Flask
+Flask-WTF
+wtforms
