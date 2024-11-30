@@ -2,47 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Lab 5{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block style %} {% endblock %}
+
+{% include "color_scheme.html" %}
 </head>
 <body>
-    <nav>
-        <a href="{{ url_for('main.login') }}">Login</a>
-        <a href="{{ url_for('main.profile') }}">Profile</a>
-        <a href="{{ url_for('main.logout') }}">Logout</a>
-    </nav>
-    
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1>Flask Application</h1>
+        </div>
+    </header>
+
+    {% with msg = get_flashed_messages(with_categories=True) %}
+    {% if msg %}
+        {% for category, message in msg %}
+            <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% include "navigation.html" %}
     <div class="container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <div class="flash-messages">
-                    {% for category, message in messages %}
-                        <div class="{{ category }}">{{ message }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-        
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Перевіряємо поточну тему
-            if (localStorage.getItem("theme") === "dark") {
-                document.body.classList.add("dark-mode");
-            }
-            
-            // Обробник для перемикання теми
-            document.getElementById("theme-toggle").addEventListener("click", function() {
-                document.body.classList.toggle("dark-mode");
-                // Зберігаємо вибір теми
-                if (document.body.classList.contains("dark-mode")) {
-                    localStorage.setItem("theme", "dark");
-                } else {
-                    localStorage.setItem("theme", "light");
-                }
-            });
-        });
-        </script>
+    {% include "footer.html" %}
+    <script src="{{url_for('static', filename='Js/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='Js/bootstrap.js')}}"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
-# app/__init__.py
 from flask import Flask
-from config import Config
 
-def create_app():
+def create_app(config_name='config'):
     app = Flask(__name__)
-    app.config.from_object(Config)
-    
-    from .routes import main
-    app.register_blueprint(main)
-    
-    return app
+    app.config.from_object(config_name) #налаштування з файлу config.py
+    with app.app_context():
+        from . import views
+        from .posts import post_bp
+        from .users import user_bp
+        app.register_blueprint(post_bp)
+        app.register_blueprint(user_bp)
+        return app
