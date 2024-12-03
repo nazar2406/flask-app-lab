@@ -1,4 +1,4 @@
-from msilib.schema import PublishComponent
+#from msilib.schema import PublishComponent
 from wsgiref.validate import validator
 
 from flask_wtf import FlaskForm
