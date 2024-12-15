@@ -2,7 +2,8 @@
 .vscode/
 .venv/
 .venv*/
-venv*/
+.venv/
+venv/
 dist/
 .coverage*
 htmlcov/

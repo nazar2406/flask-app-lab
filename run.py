@@ -1,6 +1,6 @@
-from app import create_app
+from app import app
 
-app = create_app()  # Виклик функції створення додатка
+if __name__ == "__main__":
+    app.run()  # Launch built-in web server and run this Flask webapp, debug=True
+ 
 
-if __name__ == '__main__':
-    app.run(debug=True)  # Запуск додатка
